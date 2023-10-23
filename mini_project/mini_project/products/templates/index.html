@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Menu</h1>
+ <style>
+        h1 {
+            font-family: Lucinda Grande, monospace;
+            font-size: 36px;
+        }
+    </style>
+<div class="row">
+    {% for product in veg %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 style="color: black" class="card-title">{{ product.name }}</h5>
+                <p style="color: black" class="card-text">₹{{ product.price }}</p>
+                <center>
+                <a href="order" class="btn btn-primary">Order</a>
+                </center>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% for product in nonveg %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">₹{{ product.price }}</p>
+                <center>
+                <a href="order" class="btn btn-primary">Order</a>
+                </center>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% for product in bev %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">₹{{ product.price }}</p>
+                <center>
+                <a href="order" class="btn btn-primary">Order</a>
+                </center>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
